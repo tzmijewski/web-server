@@ -8,7 +8,7 @@ var middleware = {
 		next();
 	},
 	logger: function(req, res, next){
-		console.log('Request :' + req.method + ' ' + req.originalurl + new Date().toString());
+		console.log('Request: ' + req.method + ' ' + req.originalurl + new Date().toString());
 		next();
 	}
 };
@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 */
 
 app.get('/about', middleware.requireAuthentication, function(req, res){
-	res.send('About Us');
+	res.send('About Us!');
 });
 
 app.use(express.static(__dirname + '/public'));
